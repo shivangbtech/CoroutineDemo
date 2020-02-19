@@ -9,5 +9,5 @@ import retrofit2.http.GET
 interface ITodoApi {
 
     @GET("todos")
-    suspend fun getTodos() : List<Todo>
+    suspend fun getTodoList(): MutableList<Todo>
 }

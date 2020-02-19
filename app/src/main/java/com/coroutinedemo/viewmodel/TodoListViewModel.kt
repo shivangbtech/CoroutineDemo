@@ -7,6 +7,7 @@ import com.coroutinedemo.BR
 import com.coroutinedemo.R
 import com.coroutinedemo.base.BaseViewModel
 import com.coroutinedemo.model.Todo
+import com.coroutinedemo.network.ResultState
 import com.coroutinedemo.repository.TodoRepository
 import com.coroutinedemo.repository.TodoRepositoryImpl
 import kotlinx.coroutines.Dispatchers
@@ -33,15 +34,19 @@ class TodoListViewModel : BaseViewModel() {
 
     fun showTodoList() {
         viewModelScope.launch(Dispatchers.IO) {
-            try {
-                var list = todoRepository.getTodoList()
-                withContext(Dispatchers.Main) {
-                    todoItems.addAll(list)
+               todoRepository.getTodoList().let {
+                withContext(Dispatchers.Main){
+                    when(it){
+                        is ResultState.Success -> {
+                            todoItems.addAll(it.data)
+                        }
+                        is ResultState.Error -> {
+                            Timber.e(it.throwable)
+                        }
+                    }
                 }
-                Timber.d("size of data..." + list.size)
-            } catch (e: Exception) {
-                Timber.e(e)
             }
+
         }
 
     }

@@ -26,6 +26,10 @@ android {
     dataBinding{
         enabled=true
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -57,5 +61,5 @@ dependencies {
     implementation "com.google.code.gson:gson:$gson_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_gson_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_Logging_Version"
 }

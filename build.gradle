@@ -28,6 +28,7 @@ buildscript {
         retrofit_gson_version = '2.6.2'
         retrofit_version = '2.6.2'
         gson_version = '2.8.6'
+        okhttp_Logging_Version = '3.11.0'
     }
 
     repositories {

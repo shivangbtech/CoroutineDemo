@@ -12,7 +12,6 @@ class TodoRepositoryImpl : BaseRepositoryImpl(), TodoRepository {
 
     override suspend fun getTodoList(): ResultState<MutableList<Todo>> {
         return try {
-//            delay(7000)
             ResultState.Success(DataServiceFactory.todoListService.getTodoList())
         } catch (e: Exception) {
             handleErrorReturn(e) as ResultState<MutableList<Todo>>

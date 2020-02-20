@@ -31,22 +31,26 @@ class TodoListViewModel : BaseViewModel() {
     private val todoRepository: TodoRepository = TodoRepositoryImpl()
     internal val reloadClick = SingleLiveEvent<Void>()
     val error = ObservableField<String>()
+
     init {
         showError.set(false)
         showTodoList()
     }
 
     fun showTodoList() {
+        showLoading(true)
         viewModelScope.launch(Dispatchers.IO) {
                todoRepository.getTodoList().let {
                 withContext(Dispatchers.Main){
                     when(it){
                         is ResultState.Success -> {
                             showError.set(false)
+                            showLoading(false)
                             todoItems.addAll(it.data)
                         }
                         is ResultState.Error -> {
                             error.set(it.errorResponse.errorMessage)
+                            showLoading(false)
                             showError.set(true)
 //                            Timber.e(it.throwable)
                         }

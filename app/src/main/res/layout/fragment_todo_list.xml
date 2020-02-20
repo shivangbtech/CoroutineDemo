@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewmodel"
             type="com.coroutinedemo.viewmodel.TodoListViewModel" />
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
     </data>
 
     <FrameLayout
@@ -18,19 +19,18 @@
             android:id="@+id/rv_todo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:items="@{viewmodel.todoItems}"
-            app:itemBinding="@{viewmodel.todoItemBinding}"
             android:visibility="@{viewmodel.showError ? View.GONE : View.VISIBLE}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:itemBinding="@{viewmodel.todoItemBinding}"
+            app:items="@{viewmodel.todoItems}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <include
             android:id="@+id/layout_error"
+            layout="@layout/view_error"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            layout="@layout/view_error"
-            app:viewModel = "@{viewmodel}"
             android:visibility="@{viewmodel.showError ? View.VISIBLE : View.GONE}"
-            />
+            app:viewModel="@{viewmodel}" />
 
     </FrameLayout>
 </layout>

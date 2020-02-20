@@ -5,7 +5,6 @@ import com.coroutinedemo.BR
 import com.coroutinedemo.R
 import com.coroutinedemo.base.BaseFragment
 import com.coroutinedemo.databinding.FragmentTodoListBinding
-import com.coroutinedemo.extentions.observe
 import com.coroutinedemo.navigation.NavigationContract
 import com.coroutinedemo.viewmodel.TodoListViewModel
 

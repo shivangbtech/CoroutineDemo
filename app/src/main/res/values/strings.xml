@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CoroutineDemo</string>
+    <string name="user_id">"User Id = "</string>
+    <string name="completed">"Completed = "</string>
 </resources>

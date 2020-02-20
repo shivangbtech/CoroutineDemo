@@ -8,4 +8,75 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextRegular">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Large" parent="TextRegular">
+        <item name="android:textSize">@dimen/_24ssp</item>
+    </style>
+
+    <style name="Header" parent="TextRegular">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="SubHeader" parent="TextRegular">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="Normal" parent="TextRegular">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="Small" parent="TextRegular">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="ExtraSmall" parent="TextRegular">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="Smallest" parent="TextRegular">
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <!--End Of Regular-->
+
+    <!--Bold-->
+
+    <style name="TextBold">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ExtraLargeBold" parent="TextBold">
+        <item name="android:textSize">@dimen/_30ssp</item>
+    </style>
+
+    <style name="LargeBold" parent="TextBold">
+        <item name="android:textSize">@dimen/_24ssp</item>
+    </style>
+
+    <style name="HeaderBold" parent="TextBold">
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="SubHeaderBold" parent="TextBold">
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="NormalBold" parent="TextBold">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="SmallBold" parent="TextBold">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="ExtraSmallBold" parent="TextBold">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+    <!--End Of Bold-->
+
 </resources>

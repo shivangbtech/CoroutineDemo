@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 /**
  * Created by shivanggoel on 19,February,2020
  */
-object Network {
+object NetworkClient {
 
     private val httpLoggingInterceptor = HttpLoggingInterceptor()
 

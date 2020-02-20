@@ -5,6 +5,6 @@ package com.coroutinedemo.network
  */
 object DataServiceFactory {
 
-    val todoListService: ITodoApi = Network.getNetworkClient().create(ITodoApi::class.java)
+    val todoListService: ITodoApi = NetworkClient.getNetworkClient().create(ITodoApi::class.java)
 
 }

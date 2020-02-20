@@ -27,3 +27,5 @@ f
 6app/src/main/java/com/coroutinedemo/network/Network.kt,c\d\cd4c1bd799fb68007d2b2b594fb07daed90058f0
 q
 Aapp/src/main/java/com/coroutinedemo/network/DataServiceFactory.kt,6\a\6a1443cd0159a44cabe4a5bc0ac71a5ad74baa24
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164

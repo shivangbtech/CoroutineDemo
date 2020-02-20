@@ -1,9 +1,11 @@
 package com.coroutinedemo.view
 
+import androidx.lifecycle.Observer
 import com.coroutinedemo.BR
 import com.coroutinedemo.R
 import com.coroutinedemo.base.BaseFragment
 import com.coroutinedemo.databinding.FragmentTodoListBinding
+import com.coroutinedemo.extentions.observe
 import com.coroutinedemo.navigation.NavigationContract
 import com.coroutinedemo.viewmodel.TodoListViewModel
 
@@ -30,6 +32,10 @@ class TodoListFragment : BaseFragment<FragmentTodoListBinding, TodoListViewModel
 
             override fun subscribeNavigationEvent() {
                 super.subscribeNavigationEvent()
+                viewModel.reloadClick.observe(this@TodoListFragment, Observer {
+                    viewModel.showError.set(false)
+                    viewModel.showTodoList()
+                })
             }
         }
 }

@@ -2,4 +2,6 @@
     <string name="app_name">CoroutineDemo</string>
     <string name="user_id">"User Id = "</string>
     <string name="completed">"Completed = "</string>
+    <string name="reload">RELOAD</string>
+    <string name="give_it_another_try">Give it another try</string>
 </resources>

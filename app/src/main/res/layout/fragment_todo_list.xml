@@ -7,23 +7,30 @@
         <variable
             name="viewmodel"
             type="com.coroutinedemo.viewmodel.TodoListViewModel" />
+        <import type="android.view.View"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-    >
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_todo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:items="@{viewmodel.todoItems}"
             app:itemBinding="@{viewmodel.todoItemBinding}"
+            android:visibility="@{viewmodel.showError ? View.GONE : View.VISIBLE}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/view_error"
+            app:viewModel = "@{viewmodel}"
+            android:visibility="@{viewmodel.showError ? View.VISIBLE : View.GONE}"
+            />
+
+    </FrameLayout>
 </layout>

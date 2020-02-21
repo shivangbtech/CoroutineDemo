@@ -39,3 +39,11 @@ h
 8app/src/main/java/com/coroutinedemo/base/BaseFragment.kt,8\8\883c2e0d97e402db8d2cd0dd03f537cf7eb4cf19
 l
 <app/src/main/java/com/coroutinedemo/view/TodoListFragment.kt,5\1\5198f9c62315f4335114ce7c9ee6dcd8ef0ca7b7
+Z
+*app/src/main/res/layout/list_item_todo.xml,0\b\0bacb3338e5cc10b9c31147e83d4c036ff12610d
+V
+&app/src/main/res/layout/view_error.xml,c\9\c973c2c2ba958725878cf0b6efa72d3e886a0f5b
+^
+.app/src/main/res/layout/fragment_todo_list.xml,b\6\b60dfaf1a5711fd975c1bf0beac6a4d63a25bee3
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

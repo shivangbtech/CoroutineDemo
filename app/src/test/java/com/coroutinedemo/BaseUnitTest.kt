@@ -10,9 +10,7 @@ import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
 import org.junit.runner.RunWith
-import org.mockito.ArgumentMatchers.anyString
 import org.mockito.MockitoAnnotations
-import org.mockito.stubbing.Answer
 import org.powermock.api.mockito.PowerMockito.*
 import org.powermock.core.classloader.annotations.PowerMockIgnore
 import org.powermock.core.classloader.annotations.PrepareForTest
@@ -47,9 +45,6 @@ abstract class BaseUnitTest {
         // Mocks the generic android dependencies such as Context, Looper, etc.
         mockAndroidDependencies()
 
-        // Mocks android logs
-        mockLogs()
-
         // Initializes the retrofit dependencies
         initDependencies()
     }
@@ -75,34 +70,10 @@ abstract class BaseUnitTest {
 
 
     /**
-     * This function will mock all the android Log related dependencies
-     */
-    private fun mockLogs() {
-        mockStatic(Log::class.java)
-        val logAnswer = Answer<Void> { invocation ->
-            val tag = invocation.arguments[0] as String
-            val msg = invocation.arguments[1] as String
-            println(invocation.method.name.toUpperCase() + "/[" + tag + "] " + msg)
-            null
-        }
-        doAnswer(logAnswer).`when`(Log::class.java, "d", anyString(), anyString())
-        doAnswer(logAnswer).`when`(Log::class.java, "i", anyString(), anyString())
-        doAnswer(logAnswer).`when`(Log::class.java, "w", anyString(), anyString())
-        doAnswer(logAnswer).`when`(Log::class.java, "e", anyString(), anyString())
-        doAnswer(logAnswer).`when`(Log::class.java, "wtf", anyString(), anyString())
-
-        doAnswer { invocation ->
-            val s = invocation.arguments[0] as String
-            s.isEmpty()
-        }.`when`(TextUtils::class.java, "isEmpty", anyString())
-
-    }
-
-    /**
      * This method initializes the retrofit module
      */
     private fun initDependencies() {
-        val serverUrl = mockWebServer.url("/").toString()
+//        val serverUrl = mockWebServer.url("/").toString()
         retrofit = NetworkClient.getNetworkClient()
     }
 

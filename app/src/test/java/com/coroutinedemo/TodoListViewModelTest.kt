@@ -6,10 +6,9 @@ import com.coroutinedemo.network.ITodoApi
 import com.coroutinedemo.utils.MockResponse.createMockResponse
 import com.coroutinedemo.viewmodel.TodoListViewModel
 import org.junit.Assert
-import org.junit.Test
-
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.powermock.modules.junit4.PowerMockRunner
@@ -27,17 +26,17 @@ class TodoListViewModelTest : BaseUnitTest() {
     lateinit var todoListViewModel: TodoListViewModel
 
     @Before
-    override fun setUp(){
+    override fun setUp() {
         super.setUp()
         iTodoApi = DataServiceFactory.todoListService
         todoListViewModel = TodoListViewModel()
     }
 
     @Test
-    fun testGetOtpSuccess(){
+    fun testGetOtpSuccess() {
         Assert.assertNotNull(todoListViewModel)
         Assert.assertNotNull(iTodoApi)
-        mockWebServer.enqueue(createMockResponse("todo_list_success",  HttpURLConnection.HTTP_OK))
+        mockWebServer.enqueue(createMockResponse("todo_list_success", HttpURLConnection.HTTP_OK))
         todoListViewModel.showTodoList()
         Assert.assertFalse(todoListViewModel.showError.get())
     }
